@@ -4,7 +4,7 @@
 	<window type="widget" width="477" height="261" onLoad="widgetOnLoad">
 		<layer name="layer_main_menu" width="30" height="225" left="415" top="6">
 			<image name="btn_event" width="25" height="25" src="event.png" left="3" top="100"/>
-			<image name="btn_goal" left="5" width="25" height="25" src="goal.png" top="70"/>
+			<image name="btn_goal" left="5" width="25" height="25" src="goal.png" top="70" core="shortcutcore1" onClick="btn_goalOnClick" wrapMode="1" cursor="-21"/>
 			<image name="btn_time" left="5" top="35" width="25" height="26" src="clock.png" cursor="-21" onClick="btn_timeOnClick"/>
 			<image name="btn_daily" left="4" width="25" height="25" src="daily.png" onClick="btn_dailyOnClick" cursor="-21" onKeyUp="btn_dailyOnKeyUp"/>
 			<image name="btn_note" width="25" height="25" src="memo.png" left="5" top="133" onClick="btn_noteOnClick" cursor="-21"/>
@@ -44,6 +44,8 @@ IT: ${TimeSec}" onClick="text1OnClick"/>
 	<menu/>
 	<cores>
 		<dateTimeCore name="datetimecore1" timeZoneName=" Athens" onUpdate="datetimecore1OnUpdate" interval="10"/>
+		<folderCore name="foldercore1"/>
+		<shortCutCore name="shortcutcore1"/>
 	</cores>
 	<hotspots/>
 </xul>

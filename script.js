@@ -189,3 +189,11 @@ function memo_noteOnKeyUp(Sender,Key,KeyChar,Shift)
 {
     Setinivalue(widgetpath+"Config.ini","notes","note",memo_note.Text);
 }
+
+
+
+
+function btn_goalOnClick(Sender)
+{
+  Open("C:\Sem4.mpp");
+}
