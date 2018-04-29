@@ -71,7 +71,7 @@ function widgetOnLoad()
           memo_sunday.bringToFront();
         break;
     default:
-       memo_monday.bringToFront();
+       memo_sunday.bringToFront();
   } 
 }
 
