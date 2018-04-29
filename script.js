@@ -33,7 +33,6 @@ function btn_dailyOnClick(Sender)
 
 function widgetOnLoad()
 {
- var time = new Date();
 
   memo_monday.Text = Getinivalue(widgetpath+"Config.ini","daily","monday","def text");
   memo_tuesday.Text = Getinivalue(widgetpath+"Config.ini","daily","tuesday","def text");
@@ -42,7 +41,10 @@ function widgetOnLoad()
   memo_friday.Text = Getinivalue(widgetpath+"Config.ini","daily","friday","def text");
   memo_saturday.Text = Getinivalue(widgetpath+"Config.ini","daily","saturday","def text");
   memo_sunday.Text = Getinivalue(widgetpath+"Config.ini","daily","sunday","def text");
-  
+
+
+//it will find the current day for showing the appropriate memo_text
+ var time = new Date();  
   switch(time.getDay()) {
     case 1:
          //monday
@@ -75,6 +77,9 @@ function widgetOnLoad()
     default:
        memo_sunday.bringToFront();
   } 
+  
+  
+    memo_note.Text = Getinivalue(widgetpath+"Config.ini","notes","note","def text");
 }
 
 
@@ -166,10 +171,6 @@ function btn_timeOnClick(Sender)
 }
 
 
-////good functions
-  //Setinivalue(widgetpath+"Config.ini","daily","note",memo1.Text);
-//  alert("saved");
-
 
 
 /// slide daily
@@ -180,4 +181,11 @@ function btn_noteOnClick(Sender)
   slide_daily.Slided = true;
   slidepanel2.Slided = true;
   slide_note.Slided = !slide_note.Slided;  
+}
+
+
+
+function memo_noteOnKeyUp(Sender,Key,KeyChar,Shift)
+{
+    Setinivalue(widgetpath+"Config.ini","notes","note",memo_note.Text);
 }

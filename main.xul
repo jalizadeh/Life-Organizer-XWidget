@@ -36,8 +36,8 @@ IT: ${TimeSec}" onClick="text1OnClick"/>
 		<side name="front"/>
 		<side name="back"/>
 		<slidePanel name="slide_note" left="178" width="280" height="238" background.solidColor.color="6,5,5,255" slided="true" onClick="slide_noteOnClick" slideValue="280">
-			<button name="btn_save" width="39" height="20" left="7" top="208" text.font.fill.color="255,255,255,255" text.font.size="9" border.enabled="true" border.style="1" background.solidColor.enabled="true" background.solidColor.color="146,146,146,255" onClick="btn_monOnClick" text="Save"/>
-			<memo name="memo_note" width="225" height="198" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp" left="7"/>
+			<button name="btn_save" width="39" height="20" left="7" top="208" text.font.fill.color="255,255,255,255" text.font.size="9" border.enabled="true" border.style="1" background.solidColor.enabled="true" background.solidColor.color="146,146,146,255" text="Save"/>
+			<memo name="memo_note" width="225" height="198" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" left="7" onKeyUp="memo_noteOnKeyUp"/>
 			<image name="bg_slide_daily" width="273" height="238" src="bg_daily.png"/>
 		</slidePanel>
 	</window>
