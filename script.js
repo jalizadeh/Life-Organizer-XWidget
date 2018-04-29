@@ -26,6 +26,8 @@ function datetimecore1OnUpdate(Sender)
 function btn_dailyOnClick(Sender)
 {
     slide_daily.Slided = !slide_daily.Slided;
+  slidepanel2.Slided = true;
+  slide_note.Slided = true;  
 }
 
 
@@ -158,10 +160,24 @@ function btn_SunOnClick(Sender)
 
 function btn_timeOnClick(Sender)
 {
-      slidepanel2.Slided = !slidepanel2.Slided;
+  slide_daily.Slided = true;
+  slidepanel2.Slided = !slidepanel2.Slided;
+  slide_note.Slided = true;  
 }
 
 
 ////good functions
   //Setinivalue(widgetpath+"Config.ini","daily","note",memo1.Text);
 //  alert("saved");
+
+
+
+/// slide daily
+/////////////////////////////////////////////////////////////////////////////
+
+function btn_noteOnClick(Sender)
+{
+  slide_daily.Slided = true;
+  slidepanel2.Slided = true;
+  slide_note.Slided = !slide_note.Slided;  
+}

@@ -3,11 +3,11 @@
 	<script type="text/javascript" src="script.js"/>
 	<window type="widget" width="477" height="261" onLoad="widgetOnLoad">
 		<layer name="layer_main_menu" width="30" height="225" left="415" top="6">
-			<image name="btn_event" width="25" height="25" src="event.png" left="5" top="100"/>
+			<image name="btn_event" width="25" height="25" src="event.png" left="3" top="100"/>
 			<image name="btn_goal" left="5" width="25" height="25" src="goal.png" top="70"/>
 			<image name="btn_time" left="5" top="35" width="25" height="26" src="clock.png" cursor="-21" onClick="btn_timeOnClick"/>
-			<image name="btn_daily" left="5" width="25" height="25" src="daily.png" onClick="btn_dailyOnClick" cursor="-21" onKeyUp="btn_dailyOnKeyUp"/>
-			<image name="btn_memo" width="25" height="25" src="memo.png" left="5" top="130"/>
+			<image name="btn_daily" left="4" width="25" height="25" src="daily.png" onClick="btn_dailyOnClick" cursor="-21" onKeyUp="btn_dailyOnKeyUp"/>
+			<image name="btn_note" width="25" height="25" src="memo.png" left="5" top="133" onClick="btn_noteOnClick" cursor="-21"/>
 		</layer>
 		<slidePanel name="slide_daily" left="178" width="280" height="238" background.solidColor.color="6,5,5,255" slided="true" slideValue="280">
 			<button name="btn_Sun" width="26" height="20" left="205" top="208" text.font.fill.color="255,255,255,255" text.font.size="9" border.enabled="true" border.style="1" background.solidColor.enabled="true" background.solidColor.color="146,146,146,255" text="Sun" onClick="btn_SunOnClick"/>
@@ -35,6 +35,11 @@ IT: ${TimeSec}" onClick="text1OnClick"/>
 		</slidePanel>
 		<side name="front"/>
 		<side name="back"/>
+		<slidePanel name="slide_note" left="178" width="280" height="238" background.solidColor.color="6,5,5,255" slided="true" onClick="slide_noteOnClick" slideValue="280">
+			<button name="btn_save" width="39" height="20" left="7" top="208" text.font.fill.color="255,255,255,255" text.font.size="9" border.enabled="true" border.style="1" background.solidColor.enabled="true" background.solidColor.color="146,146,146,255" onClick="btn_monOnClick" text="Save"/>
+			<memo name="memo_note" width="225" height="198" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp" left="7"/>
+			<image name="bg_slide_daily" width="273" height="238" src="bg_daily.png"/>
+		</slidePanel>
 	</window>
 	<menu/>
 	<cores>
