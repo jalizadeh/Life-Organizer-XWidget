@@ -1,21 +1,17 @@
-
-
 function datetimecore1OnUpdate(Sender)
 {     
-
-
-    var time = new Date();
-      var fullText="IR: ";
-     fullText += time.getHours()+2;
-     fullText +=":";
-     fullText += time.getMinutes()+30;
-     text2.Text = fullText; 
-     
-     
-     if (time.getHours() == 16 ){
-        //alert("https://www.youtube.com/softwaretalks");
+	var time = new Date();
+	var fullText="IR: ";
+	fullText += time.getHours()+2;
+	fullText +=":";
+	fullText += time.getMinutes()+30;
+	text2.Text = fullText; 
+	
+	/*
+	if (time.getHours() == 16 ){
+	   alert("https://www.youtube.com/softwaretalks");
      }
-           
+     */
 }
 
 
@@ -25,26 +21,33 @@ function datetimecore1OnUpdate(Sender)
 /////////////////////////////////////////////////////////////////////////////
 function btn_dailyOnClick(Sender)
 {
-    slide_daily.Slided = !slide_daily.Slided;
-  slidepanel2.Slided = true;
-  slide_note.Slided = true;  
+	slide_daily.visible = true;
+
+	slide_time.Slided = true;
+	slide_note.Slided = true; 
+	slide_routine.Slided = true;
+	
+	slide_daily.Slided = !slide_daily.Slided;
+	slide_note.visible = false;
+	slide_time.visible = false;
+	slide_routine.visible = false;
 }
 
 
 function widgetOnLoad()
 {
 
-  memo_monday.Text = Getinivalue(widgetpath+"Config.ini","daily","monday","def text");
-  memo_tuesday.Text = Getinivalue(widgetpath+"Config.ini","daily","tuesday","def text");
-  memo_wednesday.Text = Getinivalue(widgetpath+"Config.ini","daily","wednesday","def text");
-  memo_thursday.Text = Getinivalue(widgetpath+"Config.ini","daily","thursday","def text");
-  memo_friday.Text = Getinivalue(widgetpath+"Config.ini","daily","friday","def text");
-  memo_saturday.Text = Getinivalue(widgetpath+"Config.ini","daily","saturday","def text");
-  memo_sunday.Text = Getinivalue(widgetpath+"Config.ini","daily","sunday","def text");
+  memo_monday.Text = Getinivalue(widgetpath+"Config.ini","daily","monday","default text");
+  memo_tuesday.Text = Getinivalue(widgetpath+"Config.ini","daily","tuesday","default text");
+  memo_wednesday.Text = Getinivalue(widgetpath+"Config.ini","daily","wednesday","default text");
+  memo_thursday.Text = Getinivalue(widgetpath+"Config.ini","daily","thursday","default text");
+  memo_friday.Text = Getinivalue(widgetpath+"Config.ini","daily","friday","default text");
+  memo_saturday.Text = Getinivalue(widgetpath+"Config.ini","daily","saturday","default text");
+  memo_sunday.Text = Getinivalue(widgetpath+"Config.ini","daily","sunday","default text");
 
 
 //it will find the current day for showing the appropriate memo_text
- var time = new Date();  
+ var time = new Date();   
   switch(time.getDay()) {
     case 1:
          //monday
@@ -75,11 +78,15 @@ function widgetOnLoad()
           memo_sunday.bringToFront();
         break;
     default:
-       memo_sunday.bringToFront();
+       memo_monday.bringToFront();
+       break;
   } 
   
   
-    memo_note.Text = Getinivalue(widgetpath+"Config.ini","notes","note","def text");
+    memo_note.Text = Getinivalue(widgetpath+"Config.ini","notes","note","default text");
+    
+    // any desired welcome/note at startup
+    alert("Ciao amico");
 }
 
 
@@ -162,25 +169,40 @@ function btn_SunOnClick(Sender)
 
 ///slide time
 ////////////////////////////////
-
 function btn_timeOnClick(Sender)
 {
-  slide_daily.Slided = true;
-  slidepanel2.Slided = !slidepanel2.Slided;
-  slide_note.Slided = true;  
+	slide_time.visible = true;
+
+	slide_daily.Slided = true;
+	slide_note.Slided = true;  
+	slide_routine.Slided = true;
+	
+	slide_time.Slided = !slide_time.Slided;
+	slide_daily.visible = false;
+	slide_note.visible = false;
+	slide_routine.visible = false;
 }
 
 
 
 
-/// slide daily
+/// slide note
 /////////////////////////////////////////////////////////////////////////////
-
 function btn_noteOnClick(Sender)
 {
-  slide_daily.Slided = true;
-  slidepanel2.Slided = true;
-  slide_note.Slided = !slide_note.Slided;  
+	//1. make visible current slide
+	//2. slide the rest
+	//3. hide them
+	slide_note.visible = true;
+
+	slide_daily.Slided = true;
+	slide_time.Slided = true;
+	slide_routine.Slided = true;
+	
+	slide_note.Slided = !slide_note.Slided;  
+	slide_daily.visible = false;
+	slide_time.visible = false;
+	slide_routine.visible = false;
 }
 
 
@@ -193,7 +215,28 @@ function memo_noteOnKeyUp(Sender,Key,KeyChar,Shift)
 
 
 
+/// slide goal
+/////////////////////////////////////////////////////////////////////////////
 function btn_goalOnClick(Sender)
 {
   Open("C:\Sem4.mpp");
+}
+
+
+
+
+/// slide routine
+/////////////////////////////////////////////////////////////////////////////
+function btn_routineOnClick(Sender)
+{
+	slide_routine.visible = true;
+
+	slide_daily.Slided = true;
+	slide_time.Slided = true;
+	slide_note.Slided = true;
+
+	slide_routine.Slided = !slide_routine.Slided;
+	slide_daily.visible = false;
+	slide_time.visible = false;
+	slide_note.visible = false;
 }

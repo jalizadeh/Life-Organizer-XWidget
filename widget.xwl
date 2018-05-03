@@ -10,8 +10,8 @@
 		<permissions/>
 		<CloseBoxInsetX>6</CloseBoxInsetX>
 		<CloseBoxInsetY>8</CloseBoxInsetY>
-		<Width>477</Width>
-		<Height>261</Height>
+		<Width>466</Width>
+		<Height>246</Height>
 		<minPlatformVersion>0.1</minPlatformVersion>
 		<uiType>xul</uiType>
 		<mainSrc>main.xul</mainSrc>
