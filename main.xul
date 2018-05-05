@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xul Version="1.0">
 	<script type="text/javascript" src="script.js"/>
-	<window type="widget" width="467" height="246" onLoad="widgetOnLoad">
+	<window type="widget" width="467" height="246" onLoad="widgetOnLoad" onLeave="widgetOnLeave">
 		<layer name="layer_main_menu" width="30" height="225" left="415" top="6">
 			<image name="btn_routine" width="25" height="25" src="routine.png" left="3" top="166" cursor="-21" onClick="btn_routineOnClick"/>
 			<image name="btn_event" width="25" height="25" src="event.png" left="3" top="100"/>
@@ -10,12 +10,12 @@
 			<image name="btn_daily" left="4" width="25" height="25" src="daily.png" onClick="btn_dailyOnClick" cursor="-21" onKeyUp="btn_dailyOnKeyUp"/>
 			<image name="btn_note" width="25" height="25" src="memo.png" left="5" top="133" onClick="btn_noteOnClick" cursor="-21"/>
 		</layer>
-		<slidePanel name="slide_daily" left="180" width="280" height="238" background.solidColor.color="6,5,5,255" slided="true" slideValue="280">
+		<slidePanel name="slide_daily" left="180" width="280" height="238" background.solidColor.color="6,5,5,255" slided="true" slideValue="285">
 			<memo name="memo_wednesday" width="225" height="198" left="7" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp"/>
 			<memo name="memo_monday" width="225" height="198" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp" left="7"/>
 			<memo name="memo_tuesday" width="225" height="198" left="7" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp"/>
 			<memo name="memo_thursday" width="225" height="198" left="7" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp"/>
-			<memo name="memo_friday" width="225" height="198" left="7" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp"/>
+			<memo name="memo_friday" width="225" height="198" left="7" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp" onKeyDown="memo_fridayOnKeyDown"/>
 			<memo name="memo_saturday" width="225" height="198" left="7" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp"/>
 			<memo name="memo_sunday" width="225" height="198" left="7" top="7" font.antiAlias="true" autoSaveMemo="true" font.family="Microsoft YaHei Light" onKeyUp="memo1OnKeyUp"/>
 			<button name="btn_Sun" width="26" height="20" left="205" top="208" text.font.fill.color="255,255,255,255" text.font.size="9" border.enabled="true" border.style="1" background.solidColor.enabled="true" background.solidColor.color="146,146,146,255" text="Sun" onClick="btn_SunOnClick"/>

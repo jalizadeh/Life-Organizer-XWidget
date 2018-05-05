@@ -90,43 +90,6 @@ function widgetOnLoad()
 }
 
 
-//save data as entered
-function memo_mondayOnKeyUp(Sender,Key,KeyChar,Shift)
-{
-  Setinivalue(widgetpath+"Config.ini","daily","monday",memo_monday.Text);
-}
-
-function memo_tuesdayOnKeyUp(Sender,Key,KeyChar,Shift)
-{
-  Setinivalue(widgetpath+"Config.ini","daily","tuesday",memo_tuesday.Text);
-}
-
-function memo_wednesdayOnKeyUp(Sender,Key,KeyChar,Shift)
-{
-  Setinivalue(widgetpath+"Config.ini","daily","wednesday",memo_wednesday.Text);
-}
-
-function memo_thursdayOnKeyUp(Sender,Key,KeyChar,Shift)
-{
-  Setinivalue(widgetpath+"Config.ini","daily","thursday",memo_thursday.Text);
-}
-
-function memo_fridayOnKeyUp(Sender,Key,KeyChar,Shift)
-{
-  Setinivalue(widgetpath+"Config.ini","daily","friday",memo_friday.Text);
-}
-
-function memo_saturdayOnKeyUp(Sender,Key,KeyChar,Shift)
-{
-  Setinivalue(widgetpath+"Config.ini","daily","saturday",memo_saturday.Text);
-}
-
-function memo_sundayOnKeyUp(Sender,Key,KeyChar,Shift)
-{
-  Setinivalue(widgetpath+"Config.ini","daily","sunday",memo_sunday.Text);
-}
-
-
 
 //show the notes of selected day
 function btn_monOnClick(Sender)
@@ -207,7 +170,7 @@ function btn_noteOnClick(Sender)
 
 
 
-function memo_noteOnKeyUp(Sender,Key,KeyChar,Shift)
+function memo_noteOnKeyDown(Sender,Key,KeyChar,Shift)
 {
     Setinivalue(widgetpath+"Config.ini","notes","note",memo_note.Text);
 }
@@ -239,4 +202,19 @@ function btn_routineOnClick(Sender)
 	slide_daily.visible = false;
 	slide_time.visible = false;
 	slide_note.visible = false;
+}
+
+
+
+
+function widgetOnLeave()
+{
+	Setinivalue(widgetpath+"Config.ini","daily","monday",memo_monday.Text);
+	Setinivalue(widgetpath+"Config.ini","daily","tuesday",memo_tuesday.Text);
+	Setinivalue(widgetpath+"Config.ini","daily","wednesday",memo_wednesday.Text);
+	Setinivalue(widgetpath+"Config.ini","daily","thursday",memo_thursday.Text);
+	Setinivalue(widgetpath+"Config.ini","daily","friday",memo_friday.Text);
+	Setinivalue(widgetpath+"Config.ini","daily","saturday",memo_saturday.Text);
+	Setinivalue(widgetpath+"Config.ini","daily","sunday",memo_sunday.Text);
+	//alert("saved.");
 }
